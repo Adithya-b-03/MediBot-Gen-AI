@@ -1,129 +1,104 @@
-# MediBot-Gen-AI
+MediBot-Gen-AI
+MediBot-Gen-AI is a conversational AI medical bot designed to provide information and assistance.
 
-## How to Run
+How to Run
+Follow these steps to set up and run the MediBot-Gen-AI application locally:
 
-### Step 1: Clone the repository
-```bash
-git clone https://github.com/<your-repo>.git
+Step 1: Clone the repository
+Bash
+
+git clone https://github.com/Adithya-b-03/MediBot-Gen-AI
 cd MediBot-Gen-AI
 Step 2: Create and activate conda environment
-bash
-Copy
-Edit
+Bash
+
 conda create -n medibot python=3.10 -y
 conda activate medibot
 Step 3: Install requirements
-bash
-Copy
-Edit
+Bash
+
 pip install -r requirements.txt
 Step 4: Setup environment variables
-Create a .env file in the root directory and add your Pinecone & OpenAI credentials:
+Create a .env file in the root directory of your project and add your Pinecone and OpenAI credentials:
 
-ini
-Copy
-Edit
+Ini, TOML
+
 PINECONE_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 OPENAI_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 Step 5: Store embeddings to Pinecone
-bash
-Copy
-Edit
+Bash
+
 python store_index.py
 Step 6: Run the application
-bash
-Copy
-Edit
+Bash
+
 python app.py
-Open your browser and navigate to:
-http://localhost:5000
+Open your browser and navigate to: http://localhost:5000
 
 Tech Stack Used
 Python
-
 LangChain
-
 Flask
-
 GPT (OpenAI API)
-
 Pinecone
-
 AWS (CI/CD Deployment with GitHub Actions)
-
 Docker
-
 AWS Deployment Instructions
-Login to AWS console.
+This section outlines the steps to deploy MediBot-Gen-AI on AWS using Docker and GitHub Actions for CI/CD.
 
-Create IAM User with these access policies:
+1. Login to AWS console.
+2. Create IAM User
+Create an IAM User with the following access policies:
 
 AmazonEC2ContainerRegistryFullAccess
-
 AmazonEC2FullAccess
-
+3. Create an ECR Repository
 Create an ECR (Elastic Container Registry) repository to store your Docker image.
-Example URI:
-970547337635.dkr.ecr.ap-south-1.amazonaws.com/medicalchatbot
+Example URI: 970547337635.dkr.ecr.ap-south-1.amazonaws.com/medicalchatbot
 
-Create an EC2 machine (Ubuntu).
+4. Create an EC2 machine (Ubuntu).
+5. Install Docker on EC2
+Bash
 
-Install Docker on EC2:
-
-bash
-Copy
-Edit
 sudo apt-get update -y
 sudo apt-get upgrade -y
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu
 newgrp docker
-Build the Docker image from your source code and push it to ECR.
+6. Build and Push Docker Image
+Build the Docker image from your source code and push it to your ECR repository.
 
+7. Pull and Launch Docker Container
 Pull your Docker image from ECR on EC2 and launch the Docker container.
 
-(Optional) Configure EC2 as a GitHub self-hosted runner:
-GitHub Settings > Actions > Runner > New self-hosted runner, choose OS, then run the provided commands on your EC2 instance.
+8. (Optional) Configure EC2 as a GitHub self-hosted runner:
+Go to GitHub Settings > Actions > Runner > New self-hosted runner, choose your OS, then run the provided commands on your EC2 instance.
 
-Setup GitHub Secrets for CI/CD:
+9. Setup GitHub Secrets for CI/CD:
+Add the following secrets to your GitHub repository:
 
 AWS_ACCESS_KEY_ID
-
 AWS_SECRET_ACCESS_KEY
-
 AWS_DEFAULT_REGION
-
 ECR_REPO
-
 PINECONE_API_KEY
-
 OPENAI_API_KEY
-
 Repository Stats
 Stars: 72
-
 Forks: 62
+Languages Used
+Jupyter Notebook: 52.4%
+Python: 18.6%
+CSS: 14.9%
+HTML: 13.7%
 
-Languages used
-Jupyter Notebook 52.4%
 
-Python 18.6%
 
-CSS 14.9%
 
-HTML 13.7%
 
-Dockerfile 0.4%
 
-License
-This project is licensed under the MIT License.
 
-yaml
-Copy
-Edit
 
----
 
-You can copy-paste this into your `README.md` in your repo root.  
-Let me know if you want me to generate it as a file for you!
+
