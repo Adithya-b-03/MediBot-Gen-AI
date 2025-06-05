@@ -1,10 +1,10 @@
-MediBot-Gen-AI
-How to Run
-Step 1: Clone the repository
-bash
-Copy
-Edit
-git clone https://github.com/<your-repo-link>.git
+# MediBot-Gen-AI
+
+## How to Run
+
+### Step 1: Clone the repository
+```bash
+git clone https://github.com/<your-repo>.git
 cd MediBot-Gen-AI
 Step 2: Create and activate conda environment
 bash
@@ -35,7 +35,8 @@ bash
 Copy
 Edit
 python app.py
-Open your browser and navigate to: http://localhost:5000
+Open your browser and navigate to:
+http://localhost:5000
 
 Tech Stack Used
 Python
@@ -55,18 +56,17 @@ Docker
 AWS Deployment Instructions
 Login to AWS console.
 
-Create IAM User with specific access policies:
+Create IAM User with these access policies:
 
 AmazonEC2ContainerRegistryFullAccess
 
 AmazonEC2FullAccess
 
-ECR (Elastic Container Registry):
-Create an ECR repository to store your Docker image.
+Create an ECR (Elastic Container Registry) repository to store your Docker image.
 Example URI:
 970547337635.dkr.ecr.ap-south-1.amazonaws.com/medicalchatbot
 
-Create EC2 machine (Ubuntu).
+Create an EC2 machine (Ubuntu).
 
 Install Docker on EC2:
 
@@ -79,17 +79,12 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu
 newgrp docker
-Build Docker Image:
 Build the Docker image from your source code and push it to ECR.
 
-Run Docker Container on EC2:
+Pull your Docker image from ECR on EC2 and launch the Docker container.
 
-Pull your Docker image from ECR.
-
-Launch your Docker image on EC2.
-
-Configure EC2 as GitHub self-hosted runner (optional):
-Go to GitHub Settings > Actions > Runner > New self-hosted runner, choose OS, and run the provided commands on EC2.
+(Optional) Configure EC2 as a GitHub self-hosted runner:
+GitHub Settings > Actions > Runner > New self-hosted runner, choose OS, then run the provided commands on your EC2 instance.
 
 Setup GitHub Secrets for CI/CD:
 
@@ -110,8 +105,7 @@ Stars: 72
 
 Forks: 62
 
-Languages:
-
+Languages used
 Jupyter Notebook 52.4%
 
 Python 18.6%
@@ -123,5 +117,13 @@ HTML 13.7%
 Dockerfile 0.4%
 
 License
-MIT License
+This project is licensed under the MIT License.
 
+yaml
+Copy
+Edit
+
+---
+
+You can copy-paste this into your `README.md` in your repo root.  
+Let me know if you want me to generate it as a file for you!
