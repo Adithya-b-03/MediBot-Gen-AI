@@ -1,19 +1,16 @@
-# Core
-flask==3.0.3
 python-dotenv==1.0.1
+flask==3.0.3
 gunicorn==21.2.0
 
-# Embeddings
 sentence-transformers==2.2.2
+pypdf==4.2.0
 
-# LangChain (LOCKED + compatible)
 langchain==0.2.16
 langchain-community==0.2.16
 langchain-openai==0.1.23
+langchain-experimental==0.0.64
 
-# Pinecone (IMPORTANT: older compatible version)
-langchain-pinecone==0.1.3
+langchain-pinecone==0.2.11
 pinecone-client==3.2.2
 
-# Utilities
-pypdf==4.2.0
+-e .
