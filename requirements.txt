@@ -9,6 +9,6 @@ langchain==0.2.16
 langchain-community==0.2.16
 langchain-openai==0.1.23
 
-# 🔴 THIS IS THE KEY FIX
+# 🔒 HARD PIN (this is critical)
 langchain-pinecone==0.1.3
 pinecone-client==3.2.2
