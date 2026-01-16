@@ -1,16 +1,16 @@
-python-dotenv==1.0.1
-flask==3.0.3
+flask==2.3.3
 gunicorn==21.2.0
 
 sentence-transformers==2.2.2
-pypdf==4.2.0
+pypdf==3.17.4
+python-dotenv==1.0.1
 
 langchain==0.2.16
 langchain-community==0.2.16
 langchain-openai==0.1.23
-langchain-experimental==0.0.64
+langchain-pinecone==0.2.13
 
-langchain-pinecone==0.2.11
-pinecone-client==3.2.2
+pinecone-client==3.0.0
+openai<2.0.0
 
 -e .
